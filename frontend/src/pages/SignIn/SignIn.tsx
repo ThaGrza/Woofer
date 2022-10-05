@@ -1,5 +1,4 @@
 import react from "react";
-import "./SignIn.css";
 
 function SignIn() {
   return (
