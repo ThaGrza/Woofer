@@ -1,0 +1,64 @@
+.profile-container {
+  margin: 5em auto 0;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 50% auto;
+  border: 1px;
+  border-color: aliceblue;
+  border-style: solid;
+}
+.profile-bio-info {
+  grid-column-start: 2;
+}
+
+.profile-picture {
+  display: flex;
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+  padding: 1em;
+  justify-self: center;
+}
+
+.profile-dog-name {
+}
+
+.profile-human-name {
+}
+
+.profile-info {
+  font-size: 1.1rem;
+  line-height: 1.1rem;
+}
+
+.age {
+}
+
+.location {
+  border: 1px;
+  border-color: aliceblue;
+  border-bottom-style: solid;
+  text-align: center;
+}
+
+.personality {
+}
+
+.toys {
+}
+
+.bio {
+}
+
+.favorite-parks {
+  border: 1px;
+  border-color: aliceblue;
+  border-style: solid;
+  text-align: center;
+}
+
+.fav-parks-ul {
+}
+
+.fav-park-li {
+}

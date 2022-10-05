@@ -1,0 +1,23 @@
+.nav-container {
+  display: flex;
+  background-color: aquamarine;
+  padding: 0.7rem 0.5rem 0;
+  align-items: baseline;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.loggin {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0;
+  margin-left: auto;
+}

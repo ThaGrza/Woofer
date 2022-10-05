@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Feed.css";
 const Feed = (props: any) => {
   return (
     <div className="feed-container">
