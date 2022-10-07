@@ -1,15 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./App.css";
-import Navbar from "./components/navbar/Navbar";
-import SearchBar from "./components/searchBar/SearchBar";
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <SearchBar />
-    </div>
-  );
-}
+import Homepage from "../src/pages/Homepage/Homepage";
+import Welcome from "../src/pages/Welcome/Welcome";
 
-export default App;
+export default function App() {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  if (isLoggedIn) {
+    return <Homepage />;
+  }
+  return <Welcome />;
+}
