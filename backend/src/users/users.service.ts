@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { find } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './schemas/user.schema.ts';
+import { User } from './schemas/user.schema';
 import { UsersRepository } from './users.repository';
 
 @Injectable()
