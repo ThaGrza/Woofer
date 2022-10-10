@@ -12,7 +12,7 @@ interface user {
   bio: string;
 }
 
-function Profile() {
+export default function ProfilePage(props: any) {
   return (
     <div className="profile-page-container">
       <Navbar />
@@ -48,5 +48,3 @@ function Profile() {
     </div>
   );
 }
-
-export default Profile;

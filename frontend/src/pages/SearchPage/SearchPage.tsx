@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import SearchBar from "../../components/searchBar/SearchBar";
-function SearchPage() {
+
+export default function SearchPage() {
   return (
     <div className="container">
       <Navbar />
@@ -9,5 +10,3 @@ function SearchPage() {
     </div>
   );
 }
-
-export default SearchPage;
