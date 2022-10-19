@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 
-export default function Loggin() {
+export default function Login() {
   return (
     <div className="loggin-container">
       <p className="intro-text">
