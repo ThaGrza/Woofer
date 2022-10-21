@@ -1,17 +1,28 @@
 import React from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 
-export default function SignUp() {
+export function SignUp() {
   return (
-    <div className="signup-container">
-      <form className="signup-form">
-        <input className="email-text" placeholder="Email"></input>
-        <input className="username-text" placeholder="Username"></input>
-        <input className="password-text" placeholder="Password"></input>
-        <input className="password-text" placeholder="Password"></input>
-        <button className="signup-form-button">Sign Up</button>
+    <div signUp-container>
+      <p className="signUp-intro">
+        OOOO we have a new member! Welcome Welcome Friend! Fill out some
+        standard information below, once you are signed in you can start to
+        customize your account!
+      </p>
+      <form className="signUp-form">
+        <input className="signUp-input input" placeholder="Email"></input>
+        <input className="signUp-input input" placeholder="Username"></input>
+        <input
+          className="signUp-input input"
+          type="password"
+          placeholder="Password"
+        ></input>
+        <input
+          className="signUp-input input"
+          type="password"
+          placeholder="Password"
+        ></input>
+        <button className="signUp-button button">Sign Up</button>
       </form>
     </div>
   );

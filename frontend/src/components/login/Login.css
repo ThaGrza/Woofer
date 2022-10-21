@@ -1,4 +1,5 @@
-.login-container {
+/* parent page container */
+.page-container {
   text-align: center;
 }
 
@@ -15,6 +16,7 @@
 
 .signUp-options {
 }
+
 .username-text {
 }
 
@@ -27,6 +29,7 @@
   margin: 0.2rem;
   font-size: 1rem;
   line-height: 1.4rem;
+  text-indent: 0.5rem;
 }
 
 .button {
@@ -36,4 +39,28 @@
   font-size: 1rem;
   border-radius: 5%;
   color: black;
+}
+/* NEW MEMBER SECTION SIGN UP */
+.signUp-intro {
+  text-indent: 2rem;
+  font-size: 1.4rem;
+  text-overflow: wrap;
+  margin-bottom: 5rem;
+  line-height: 2rem;
+}
+
+.signUp-form {
+  width: 20%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.signUp-input {
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+.signUp-button {
+  align-self: center;
+  width: 6rem;
 }

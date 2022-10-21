@@ -5,7 +5,7 @@ import Homepage from "../src/pages/Homepage/Homepage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 
 export default function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
   if (isLoggedIn) {
     return <Homepage />;
   }

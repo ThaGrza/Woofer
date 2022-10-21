@@ -1,14 +1,23 @@
-.signup-container {
+.signUp-intro {
+  text-indent: 2rem;
+  font-size: 1.4rem;
+  text-overflow: wrap;
+  margin-bottom: 5rem;
+  line-height: 2rem;
 }
 
-.signup-form {
+.signUp-form {
+  width: 20%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.signUp-input {
+  margin-bottom: 1rem;
+  line-height: 2rem;
 }
 
-.email-text {
-}
-
-.username-text {
-}
-
-.password-text {
+.signUp-button {
+  align-self: center;
+  width: 6rem;
 }
