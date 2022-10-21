@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
+import "./SearchParks.css";
 
-function SearchBar() {
+function SearchParks() {
   const [location, setLocation] = useState("");
 
   const searchValue = (e: any) => {
@@ -25,4 +25,4 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+export default SearchParks;

@@ -1,0 +1,33 @@
+.post-container {
+  background-color: white;
+  margin: auto;
+  border-width: 1px;
+  border-style: solid;
+  width: 40rem;
+  border-width: 1px;
+  border-color: black;
+}
+
+.post-image {
+  margin-top: 1rem;
+  width: auto;
+  height: 30rem;
+}
+.post-user-container {
+  border-width: 1px;
+  border-color: black;
+  border-bottom-style: solid;
+}
+
+.post-desc-container {
+}
+.post-user {
+  margin-right: 30rem;
+  color: black;
+}
+
+.post-desc {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SearchPage from "./pages/SearchPage/SearchPage";
+import Homepage from "./pages/Homepage/Homepage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import "./index.css";
 import App from "./App";
@@ -12,7 +12,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/searchpage" element={<SearchPage />} />
+      <Route path="/homepage" element={<Homepage />} />
       <Route path="/profile" element={<ProfilePage />} />
     </Routes>
   </BrowserRouter>

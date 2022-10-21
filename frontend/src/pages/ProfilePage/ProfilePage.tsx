@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
-import Feed from "../../components/feed/Feed";
 
 interface user {
   name: string;
@@ -44,7 +43,6 @@ export default function ProfilePage(props: any) {
           </ul>
         </div>
       </div>
-      <Feed />
     </div>
   );
 }

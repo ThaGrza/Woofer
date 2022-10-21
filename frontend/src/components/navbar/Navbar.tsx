@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchUser from "../searchUser/SearchUser";
 import "./Navbar.css";
 
 function Navbar() {
@@ -9,7 +10,7 @@ function Navbar() {
       <Link to="/" className="nav-link title">
         Woofer
       </Link>
-      <Link to="/profile" className="nav-link loggin">
+      <Link to="/profile" className="nav-link login">
         {loggedIn ? "Profile" : "Sign In"}
       </Link>
     </div>
