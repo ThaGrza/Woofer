@@ -11,14 +11,14 @@ function SearchParks() {
   return (
     <div className="search-container">
       <input
-        placeholder="Enter Your City"
+        placeholder="Enter Your Town / City"
         onChange={(e) => {
           setLocation(e.target.value);
         }}
-        title="Enter Your City"
+        title="Enter Your Town / City"
         className="search-input"
       ></input>
-      <button className="search-bar" onClick={searchValue}>
+      <button className="search-button" onClick={searchValue}>
         Search
       </button>
     </div>

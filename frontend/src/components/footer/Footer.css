@@ -1,0 +1,15 @@
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 80%;
+}
+.footer-content {
+  margin: auto;
+}
+
+.social-icon {
+}
+
+.date {
+}
