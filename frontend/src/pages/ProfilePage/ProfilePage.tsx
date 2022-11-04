@@ -23,7 +23,7 @@ export default function ProfilePage(props: any) {
           alt="🐕"
         />
         <div className="profile-bio-info">
-          <p className="profile-info dog-name">Harlow</p>
+          <h2 className="profile-info dog-name">Harlow</h2>
           <p className="profile-info human-name">
             Cared for by: Andrew Griswold
           </p>
