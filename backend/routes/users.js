@@ -2,15 +2,16 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
-// Find user
-router.get('/user/:userId', async (req,res) => {
+// Find user by name
+router.get('/user/:userName', async (req,res) => {
     try{
-        const user = await User.findById(req.params.userId);
+        const user = await User.find({ name: { $regex: req.params.userName }});
         res.json(user);
+        console.log("omg a request!")
     }catch(err){
         res.json({ message: err });
     }
-})
+});
 
 // Create New User
 router.post('/newUser', async (req, res) => {
@@ -27,6 +28,28 @@ router.post('/newUser', async (req, res) => {
     res.json(savedUser);
     }
     catch (err) {
+        res.json({ message: err });
+    }
+});
+// Update User Name
+router.patch('/user/:userId', async (req,res) => {
+    try{
+        const updateUserName = await User.updateOne(
+            {_id: req.params.userId}, 
+            {$set : {name: req.body.name}}
+        );
+        res.json(updateUserName);
+    }catch(err){
+        res.json({ message: err });
+    }
+});
+
+// Delete User
+router.delete('/user/:userId', async (req,res) => {
+    try{
+    const removeUser = await User.remove({ _id: req.params.userId })
+    res.json(removeUser);
+    }catch(err){
         res.json({ message: err });
     }
 });

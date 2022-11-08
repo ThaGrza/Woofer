@@ -8,12 +8,13 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3001;
 
+// Middleware
+app.use(cors());
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
   })
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.json());
@@ -38,6 +39,7 @@ app.use(userRoutes);
 //     console.log(error);
 //   })
 
+// Database Connection
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/woofer"
   );

@@ -19,7 +19,7 @@ function SearchParks() {
         title="Enter Your Town / City"
         className="search-input"
       ></input>
-      <button className="search-button" onClick={searchValue}>
+      <button className="search-parks-button" onClick={searchValue}>
         Search
       </button>
     </div>

@@ -1,7 +1,30 @@
-/* .searchUser-container {
+.search-user-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+  font-size: 2rem;
+}
+.search-user-input {
+  width: 30%;
+  height: 2rem;
+  float: center;
+  font-size: 1.3rem;
+  background-color: azure;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  color: rgb(36, 36, 36);
+  line-height: 1.5rem;
+  text-indent: 10px;
+}
+.search-user-button {
+  background-color: azure;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.searchUser-input {
-  background-color: white;
-  color: black;
-} */
+.search-user-button:active {
+  transform: translateY(2px);
+  background-color: rgb(205, 212, 212);
+}

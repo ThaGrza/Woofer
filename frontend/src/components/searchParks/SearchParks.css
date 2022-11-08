@@ -16,7 +16,7 @@
   line-height: 1.5rem;
   text-indent: 10px;
 }
-.search-button {
+.search-parks-button {
   background-color: azure;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -24,7 +24,7 @@
   font-weight: 400;
 }
 
-.search-button:active {
+.search-parks-button:active {
   transform: translateY(2px);
   background-color: rgb(205, 212, 212);
 }
