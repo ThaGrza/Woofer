@@ -4,15 +4,22 @@ import SearchUser from "../searchUser/SearchUser";
 import "./Navbar.css";
 
 function Navbar() {
-  let loggedIn = false;
+  let loggedIn = true;
   return (
     <div className="nav-container">
       <Link to="/" className="nav-link">
         <h1 className="title">Woofer</h1>
       </Link>
-      <Link to="/profile" className="nav-link login">
-        {loggedIn ? "Profile" : "Sign In"}
-      </Link>
+      <SearchUser />
+      {loggedIn ? (
+        <Link to="/profile" className="nav-link sub-item">
+          Profile
+        </Link>
+      ) : (
+        <Link to="/login" className="nav-link sub-item">
+          Login
+        </Link>
+      )}
     </div>
   );
 }

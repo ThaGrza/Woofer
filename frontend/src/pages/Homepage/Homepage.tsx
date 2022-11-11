@@ -10,7 +10,6 @@ export default function Homepage(props: any) {
     <div className="homepage-container">
       <Navbar />
       <SearchParks />
-      <SearchUser />
       <Footer />
     </div>
   );
