@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
+import Axios from "axios";
 import "./SearchUser.css";
 
 function SearchUser() {
   const [user, setUser] = useState("");
   const findUser = () => {
-    axios.get("/user/" + user).then((res) => {
+    Axios.get("/user/" + user).then((res) => {
       console.log(res.data);
     });
   };
