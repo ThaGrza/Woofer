@@ -2,16 +2,6 @@ import React, { useState } from "react";
 import "./Register.css";
 import Axios from "axios";
 
-// ? Might need
-//  interface user {
-//   email: string;
-//   password: string;
-//   name: string;
-//   dog: string;
-//   bio: string;
-//   age: number;
-// }
-
 export function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -66,7 +56,7 @@ export function Register() {
         <input
           className="signUp-input"
           type="text"
-          placeholder="Username"
+          placeholder="Name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);

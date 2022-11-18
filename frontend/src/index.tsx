@@ -10,6 +10,7 @@ import SettingsPage from "./pages/SettingsPage/SettingsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import "./index.css";
 import App from "./App";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

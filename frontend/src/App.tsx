@@ -1,13 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "./App.css";
-import Homepage from "../src/pages/Homepage/Homepage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 export default function App() {
-  const [isLoggedIn, setLoggedIn] = useState(true);
-  if (isLoggedIn) {
-    return <Homepage />;
-  }
-  return <WelcomePage />;
+  return <LoginPage />;
 }
