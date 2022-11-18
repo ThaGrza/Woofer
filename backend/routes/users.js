@@ -3,9 +3,10 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const { response, request } = require('express');
+const jwt = require('jsonwebtoken');
 
 
-// New User
+// TODO: add jwt / auto login after account made
 router.post('/register', async (req, res) => {
     try{
     bcrypt.hash(req.body.password, 10).then((hashedPassword) => {
@@ -29,8 +30,48 @@ router.post('/register', async (req, res) => {
         res.json({ message: err });
     }
 });
+// * Login User
+router.post('/login', (req,res) => {
+    User.findOne({email: req.body.email })
+    .then((user => {
+        bcrypt.compare(req.body.password, user.password)
+        .then((passwordCheck => {
+            if(!passwordCheck) {
+                return res.status(400).send({
+                    message: "Incorrect Password", err
+                });
+            }
+            const token = jwt.sign(
+                {
+                    userId: user._id,
+                    userEmail: user.email
+                },
+                "RANDOM-TOKEN",
+                {expiresIn: "24h"}
+            );
 
-// Find user by name
+            res.status(200).send({
+                message: "login success",
+                email: user.email,
+                token
+            });
+        }))
+        .catch((err) => {
+            res.status(400).send({
+                message: "Incorrect Password", err
+            });
+        });
+    }))
+    .catch((err) => {
+        console.log(err)
+        res.status(404).send({
+            message: "Email not found", err
+        });
+    });
+});
+
+
+// ! Find user by name import auth.js and pass it in as param
 router.get('/user/:userName', async (req,res) => {
     try{
         const user = await User.find({ name: { $regex: req.params.userName }});
@@ -40,7 +81,8 @@ router.get('/user/:userName', async (req,res) => {
         res.json({ message: err });
     }
 });
-// Update User Name
+
+// ! change Update User Name import auth.js and pass it in as param
 router.patch('/user/:userId', async (req,res) => {
     try{
         const updateUserName = await User.updateOne(
@@ -53,7 +95,7 @@ router.patch('/user/:userId', async (req,res) => {
     }
 });
 
-// Delete User
+// ! Delete User import auth.js and pass it in as param
 router.delete('/user/:userId', async (req,res) => {
     try{
     const removeUser = await User.remove({ _id: req.params.userId })
