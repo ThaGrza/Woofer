@@ -1,4 +1,18 @@
-.welcomePage-container {
+.welcomePage_container {
   margin: auto;
   width: 80%;
+}
+
+.welcome_header {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: -5rem;
+  margin-bottom: 5rem;
+}
+.welcome_desc {
+  font-size: 1.3rem;
+  text-align: center;
+  text-indent: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
 }

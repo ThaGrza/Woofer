@@ -1,5 +1,10 @@
 .signUp-container {
-  background-color: white;
+  text-align: center;
+}
+
+.sign_up_form {
+  display: flex;
+  flex-direction: column;
 }
 
 .signUp-intro {
@@ -16,12 +21,16 @@
   display: flex;
   flex-direction: column;
 }
-.signUp-input {
+/* * Input fields */
+.sign_up {
   margin-bottom: 1rem;
   line-height: 2rem;
+  background-color: aliceblue;
+  margin: 10px;
 }
 
 .signUp-button {
   align-self: center;
   width: 6rem;
+  background-color: aliceblue;
 }

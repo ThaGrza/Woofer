@@ -10,7 +10,7 @@ function Navbar() {
       <Link to="/" className="nav-link">
         <h1 className="title">Woofer</h1>
       </Link>
-      <SearchUser />
+      {/* <SearchUser /> */}
       {loggedIn ? (
         <Link to="/profile" className="nav-link sub-item">
           Profile

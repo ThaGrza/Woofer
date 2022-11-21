@@ -1,31 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
-  const configuration = {
-    method: "post",
-    url: "http://localhost:3001/login",
-    data: {
-      email,
-      password,
-    },
+
+  const user = {
+    email: email,
+    password: password,
   };
-  const woofer = () => {
-    axios(configuration)
+  const woofer = (e: any) => {
+    e.preventDefault();
+    axios
+      .post("/login", user)
       .then((res) => {
-        console.log(res);
+        if (res.status === 200) {
+          setLogin(true);
+          alert("logged in");
+          // navigate("/homepage", { replace: true });
+        }
       })
       .catch((err) => {
-        console.log(err);
+        err = new Error();
       });
   };
-
-  const handleSignUp = () => {};
 
   const handleForgotPass = () => {};
 
@@ -37,10 +39,9 @@ export default function Login() {
         </p>
         <form className="login-form">
           <input
-            className="username-text input"
-            id="username"
-            type="username"
-            placeholder="Username"
+            className="email-text input"
+            type="text"
+            placeholder="email"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -48,7 +49,6 @@ export default function Login() {
           ></input>
           <input
             className="password-text input"
-            id="password"
             type="password"
             placeholder="Password"
             value={password}

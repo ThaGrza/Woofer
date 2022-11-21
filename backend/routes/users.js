@@ -2,11 +2,10 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
-const { response, request } = require('express');
 const jwt = require('jsonwebtoken');
+const auth = require("../auth");
 
-
-// TODO: add jwt / auto login after account made
+//  * New User
 router.post('/register', async (req, res) => {
     try{
     bcrypt.hash(req.body.password, 10).then((hashedPassword) => {
@@ -71,14 +70,15 @@ router.post('/login', (req,res) => {
 });
 
 
-// ! Find user by name import auth.js and pass it in as param
-router.get('/user/:userName', async (req,res) => {
+// * Find user by name
+router.get('/user/:userName', auth, async (req,res) => {
     try{
         const user = await User.find({ name: { $regex: req.params.userName }});
         res.json(user);
         console.log("omg a request!")
     }catch(err){
         res.json({ message: err });
+        console.log("NOT AUTHORIZED");
     }
 });
 
