@@ -32,42 +32,40 @@ export default function Login() {
   const handleForgotPass = () => {};
 
   return (
-    <div className="page-container">
-      <div className="login-container">
-        <p className="intro-text">
-          Welcome to Woofer the premier social media and dog park platform.
-        </p>
-        <form className="login-form">
-          <input
-            className="email-text input"
-            type="text"
-            placeholder="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          ></input>
-          <input
-            className="password-text input"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          ></input>
-          <button className="login button" onClick={woofer}>
-            Login
-          </button>
-        </form>
-        <div className="signUp-options">
-          <Link to="/signup" className="signup-link">
-            <button className="signup-link-button">Sign Up</button>
-          </Link>
-          <button className="forgot-password-button" onClick={handleForgotPass}>
-            Forgot Password?
-          </button>
-        </div>
+    <div className="login-container">
+      <p className="intro-text">
+        Welcome to Woofer the premier social media and dog park platform.
+      </p>
+      <form className="login-form">
+        <input
+          className="email-text input"
+          type="text"
+          placeholder="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        ></input>
+        <input
+          className="password-text input"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+        ></input>
+        <button className="login button" onClick={woofer}>
+          Login
+        </button>
+      </form>
+      <div className="signUp-options">
+        <Link to="/signup" className="signup-link">
+          <button className="signup-link button">Sign Up</button>
+        </Link>
+        <button className="forgot-password button" onClick={handleForgotPass}>
+          Forgot Password?
+        </button>
       </div>
     </div>
   );
