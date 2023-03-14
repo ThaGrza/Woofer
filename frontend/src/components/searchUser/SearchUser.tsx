@@ -4,6 +4,7 @@ import "./SearchUser.css";
 
 function SearchUser() {
   const [user, setUser] = useState("");
+
   const findUser = () => {
     Axios.get("/user/" + user).then((res) => {
       console.log(res.data);
@@ -13,15 +14,20 @@ function SearchUser() {
   return (
     <div className="search-user-container">
       <input
-        placeholder="Find Other Woofers!"
+        placeholder="Search Users..."
         className="search-user-input"
         onChange={(e) => {
           setUser(e.target.value);
         }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            findUser();
+          }
+        }}
       ></input>
-      <button className="search-user-button" onClick={findUser}>
+      {/* <button className="search-user-button" onClick={findUser}>
         Search
-      </button>
+      </button> */}
     </div>
   );
 }

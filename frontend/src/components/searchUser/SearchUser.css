@@ -1,23 +1,22 @@
 .search-user-container {
   display: flex;
   justify-content: center;
-  margin-top: 8rem;
-  font-size: 2rem;
 }
+
+/*! Fix font (githubs search navbar scaling effect) */
 .search-user-input {
-  width: 30%;
   height: 2rem;
-  float: center;
-  font-size: 1.3rem;
-  background-color: azure;
+  font-size: 1rem;
+  background-color: rgb(255, 255, 255);
   margin-right: 2rem;
   margin-left: 2rem;
   color: rgb(36, 36, 36);
-  line-height: 1.5rem;
   text-indent: 10px;
+  transition: 0.15s;
 }
+
 .search-user-button {
-  background-color: azure;
+  background-color: rgb(255, 255, 255);
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 1rem;
@@ -26,5 +25,10 @@
 
 .search-user-button:active {
   transform: translateY(2px);
-  background-color: rgb(205, 212, 212);
+  background-color: rgb(255, 255, 255);
+}
+
+/*! Fix font (githubs search navbar scaling effect) */
+.search-user-input:focus {
+  transform: scaleX(2);
 }

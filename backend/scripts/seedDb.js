@@ -23,7 +23,7 @@ const userSeed = [
     age: 18
   },
   {
-    name: "Shunsui something",
+    name: "Shunsui Kyoraku",
     dog: "Lisa",
     bio:
       "Pervert.",

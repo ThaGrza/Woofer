@@ -1,11 +1,10 @@
 .footer-container {
   position: fixed;
   bottom: 0;
+  width: 100%;
   text-align: center;
-  width: 80%;
 }
 .footer-content {
-  margin: auto;
 }
 
 .social-icon {

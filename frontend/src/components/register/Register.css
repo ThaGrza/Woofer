@@ -1,10 +1,18 @@
 .signUp-container {
   text-align: center;
+  background-color: aqua;
+  margin: 1rem;
+  animation: blin;
+}
+
+.signUp-container:hover {
 }
 
 .sign_up_form {
+  background-color: red;
   display: flex;
   flex-direction: column;
+  margin: 1rem;
 }
 
 .signUp-intro {

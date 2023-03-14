@@ -21,7 +21,7 @@ export default function Login() {
         if (res.status === 200) {
           setLogin(true);
           alert("logged in");
-          // navigate("/homepage", { replace: true });
+          navigate("/homepage", { replace: true });
         }
       })
       .catch((err) => {

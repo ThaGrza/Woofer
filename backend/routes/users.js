@@ -69,9 +69,9 @@ router.post('/login', (req,res) => {
     });
 });
 
-
+//! auth
 // * Find user by name
-router.get('/user/:userName', auth, async (req,res) => {
+router.get('/user/:userName', async (req,res) => {
     try{
         const user = await User.find({ name: { $regex: req.params.userName }});
         res.json(user);

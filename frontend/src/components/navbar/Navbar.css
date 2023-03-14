@@ -1,9 +1,11 @@
 .nav-container {
   background-color: aquamarine;
+  height: 3.75rem;
   margin-bottom: 11rem;
   display: flex;
   contain: content;
-  justify-content: baseline;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-link {
@@ -16,12 +18,15 @@
 }
 
 .title {
-  font-size: 2.5rem;
-  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 2rem;
+  padding: 1rem;
 }
 
 .sub-item {
   position: fixed;
   right: 0;
-  padding-top: 1.5rem;
+  padding: 1rem;
 }

@@ -1,9 +1,9 @@
 .feed-container {
   position: relative;
-  margin: auto;
-  width: 70%;
+  margin: 1rem;
   overflow-y: scroll;
   text-align: center;
+  background-color: pink;
 }
 
 .post {
