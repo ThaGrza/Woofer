@@ -1,5 +1,4 @@
 # Woofer
-woofer
 
 ## Screenshots / Gifs
 
