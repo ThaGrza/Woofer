@@ -1,37 +1,16 @@
-.feed-container {
-  position: relative;
-  margin: 1rem;
-  overflow-y: scroll;
-  text-align: center;
-  background-color: pink;
+.parks-container {
+  border: 1px, solid, white;
 }
 
-.post {
-  margin-top: 5rem;
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  justify-content: center;
-}
-.feed-title {
-  border: 1px;
-  border-color: aliceblue;
-  border-bottom-style: solid;
-  grid-column-start: 2;
-  text-align: center;
-  font-size: 2rem;
-  margin: 2rem;
-  padding: 0;
+.park-title {
+  font-size: 1.7rem;
 }
 
-.image-post {
-  grid-column-start: 2;
-  justify-self: center;
-  height: 300px;
-  width: auto;
+.park-item {
+  font-size: 1.3rem;
 }
-.user-name {
-  grid-column-start: 2;
-}
-.post-comment {
-  grid-column-start: 2;
+
+.park-image {
+  height: 2rem;
+  width: 2.2rem;
 }

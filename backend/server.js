@@ -1,5 +1,5 @@
 const userRoutes = require('./routes/users');
-const googlePlaces = require('./routes/googlePlaces');
+const googleParks = require('./routes/googleParks');
 const express = require('express');
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-app.use(userRoutes, googlePlaces);
+app.use(userRoutes, googleParks);
 
 
 

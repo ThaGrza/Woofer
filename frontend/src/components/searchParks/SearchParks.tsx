@@ -4,21 +4,16 @@ import ParksDisplay from "../parksDisplay/ParksDisplay";
 import "./SearchParks.css";
 
 function SearchParks() {
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("NH");
   const [searchActive, setSearchActive] = useState(false);
 
-  // ! Display Parks component
   const handleChange = (e: any) => {
-    ParksDisplay();
+    Axios.post("/parkLocation", location).then((res) => {});
+    Axios.get("/getParks").then((res) => {
+      //! Map response data to parksDisplay comp
+      console.log(res.data.message);
+    });
   };
-
-  // ! e.key becomes undefined when passed here.
-  // const handleKeyDown = (e: any) => {
-  //   console.log("Logged from handleKeyDown: ", e.key);
-  //   if (e.key === "Enter") {
-  //     console.log("ITS WORKING BOYO");
-  //   }
-  // };
 
   return (
     <div className="search-parks-container">
@@ -41,7 +36,11 @@ function SearchParks() {
           Search
         </button>
       </div>
-      {/* {searchActive ? <ParksDisplay /> : <div></div>} */}
+      {searchActive ? (
+        <div className="parks-container">{<ParksDisplay />}</div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

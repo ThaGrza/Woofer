@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import "./ParksDisplay.css";
-import Park from "../park/Park";
 
-interface Location {
-  lat: number;
-  long: number;
-}
 interface Park {
   name: string;
-  location: string;
+  review: number;
+  address: string;
+  hours: number;
 }
 
-export default function ParksDisplay() {
-  const [valid, setValid] = useState(false);
-  const [name, setName] = useState("");
-  const [miles, setMiles] = useState(0);
-  const [location, setLocation] = useState(0);
-
-  Axios.get("/googleTest").then((res) => {
-    alert(res.data.message);
-  });
-
+const ParksDisplay = () => {
   return (
+    // ! ACTUAL CODE
+    // <div className="parks-container">
+    //   <p className="park-title">{props.name}</p>
+    //   <p className="park-item">{props.review}</p>
+    //   <p className="park-item">{props.name}</p>
+    //   <p className="park-item">{props.hours}</p>
+    //   <img alt={props.name} className="park-image">
+    //     Image
+    //   </img>
+    // </div>
+    // ! TEST CODE
     <div className="parks-container">
-      {/* map through res.data parks */}
-      <p>Hi.</p>
+      <p>hi</p>
     </div>
   );
-}
+};
+
+export default ParksDisplay;
