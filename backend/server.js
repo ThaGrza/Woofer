@@ -24,6 +24,8 @@ if (process.env.NODE_ENV === "production") {
 app.use(userRoutes, googleParks);
 
 
+// Mongoose settings
+mongoose.set('strictQuery', false);
 
 // Database Connection
 mongoose.connect(
