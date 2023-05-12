@@ -4,7 +4,7 @@ import "./NotFoundPage.css";
 const NotFoundPage = () => {
   return (
     <div className="notFound-container">
-      <h4>Page Not Found So Sorry</h4>
+      <h4>"We're having trouble find this page."</h4>
     </div>
   );
 };
