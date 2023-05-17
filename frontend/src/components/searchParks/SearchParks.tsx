@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-import Axios from "axios";
 import ParksDisplay from "../parksDisplay/ParksDisplay";
 import "./SearchParks.css";
 
-function SearchParks() {
-  const [location, setLocation] = useState("NH");
+function SearchParks(props: any) {
   const [searchActive, setSearchActive] = useState(false);
 
+// moved to homepage.tsx
   const handleChange = (e: any) => {
-    Axios.post("/parkLocation", location).then((res) => {});
-    Axios.get("/getParks").then((res) => {
       //! Map response data to parksDisplay comp
-      console.log(res.data.message);
-    });
   };
 
   return (
@@ -20,9 +15,6 @@ function SearchParks() {
       <div className="search-container">
         <input
           placeholder="Search by zip-code or city..."
-          onChange={(e) => {
-            setLocation(e.target.value);
-          }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               handleChange(e);

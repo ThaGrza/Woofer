@@ -3,138 +3,145 @@ import "./Register.css";
 import Axios from "axios";
 
 export function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordRe, setPasswordRe] = useState("");
-  const [name, setName] = useState("");
-  const [dog, setDog] = useState("");
-  const [bio, setBio] = useState("");
-  const [age, setAge] = useState(0);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordRe, setPasswordRe] = useState("");
+    const [name, setName] = useState("");
+    const [dog, setDog] = useState("");
+    const [bio, setBio] = useState("");
+    const [age, setAge] = useState(0);
 
-  const newUser = {
-    email: email,
-    password: password,
-    name: name,
-    dog: dog,
-    bio: bio,
-    age: age,
-  };
+    const newUser = {
+email: email,
+       password: password,
+       name: name,
+       dog: dog,
+       bio: bio,
+       age: age,
+    };
 
-  const submitUser = (e: any) => {
-    e.preventDefault();
-    if (password === passwordRe) {
-      Axios.post("/register", newUser)
-        .then(function (res) {
-          alert("You are signed up Woofer!");
-        })
-        .catch(function (err) {
-          console.log(err);
-        });
-    } else {
-      alert("Passwords do not match");
-    }
-  };
-  return (
-    <div className="signUp-container">
-      <p className="signUp-intro">
-        OOOO we have a new member! Welcome Welcome Friend! Fill out some
-        standard information below.
-      </p>
-      <form className="sign_up_form">
-        <label>
-          Email:
-          <input
-            className="sign_up"
+    const submitUser = (e: any) => {
+        e.preventDefault();
+        if (password === passwordRe) {
+            Axios.post("/register", newUser)
+                .then(function (res) {
+                        alert("You are signed up Woofer!");
+                        })
+            .catch(function (err) {
+                    console.log(err);
+                    });
+        } else {
+            alert("Passwords do not match");
+        }
+    };
+    return (
+            <div className="sign-up-container">
+            <h1 className="sign-up-intro">
+            OOOO we have a new member! Welcome Welcome Friend! Fill out some
+            standard information below.
+            </h1>
+            <form className="sign-up-form">
+            <label className="sign-up-label" htmlFor="email">
+            Email:
+            </label>
+            <input
+            className="sign-up-input"
             placeholder="Email"
+            name="email"
             value={email}
             onChange={(e) => {
-              setEmail(e.target.value);
+            setEmail(e.target.value);
             }}
             required
-          ></input>
-        </label>
-        <label>
-          Password:
-          <input
-            className="sign_up"
+            ></input>
+            <label className="sign-up-label" htmlFor="password">
+            Password:
+            </label>
+            <input
+            className="sign-up-input"
             type="password"
+            name="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            required
-          ></input>
+    onChange={(e) => {
+        setPassword(e.target.value);
+    }}
+    required
+        ></input>
+        <label className="sign-up-label" htmlFor="repassword">
+        Re-enter Password:
         </label>
-        <label>
-          Re-enter Password:
-          <input
-            className="sign_up"
-            type="password"
-            placeholder="re-renter password"
-            value={passwordRe}
-            onChange={(e) => {
-              setPasswordRe(e.target.value);
-            }}
-            required
-          ></input>
+        <input
+        className="sign-up-input"
+        name="repassword"
+        type="password"
+        placeholder="re-renter password"
+        value={passwordRe}
+    onChange={(e) => {
+        setPasswordRe(e.target.value);
+    }}
+    required
+        ></input>
+        <label className="sign-up-label" htmlFor="name">
+        Name:
         </label>
-        <label>
-          Name:
-          <input
-            className="sign_up"
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            required
-          ></input>
+        <input
+        className="sign-up-input"
+        name="name"
+        type="text"
+        placeholder="Name"
+        value={name}
+    onChange={(e) => {
+        setName(e.target.value);
+    }}
+    required
+        ></input>
+        <label className="sign-up-label" htmlFor="breed">
+        Dog Breed:
         </label>
-        <label>
-          Dog Breed:
-          <input
-            className="sign_up"
-            type="text"
-            placeholder="Dog Breed"
-            value={dog}
-            onChange={(e) => {
-              setDog(e.target.value);
-            }}
-            required
-          ></input>
+        <input
+        className="sign-up-input"
+        name="breed"
+        type="text"
+        placeholder="Dog Breed"
+        value={dog}
+    onChange={(e) => {
+        setDog(e.target.value);
+    }}
+    required
+        ></input>
+        <label className="sign-up-label" htmlFor="toys">
+        Favorite Toys / Personality:
         </label>
-        <label>
-          Favorite Toys / Personality:
-          <input
-            className="sign_up"
-            type="text"
-            placeholder="Bio"
-            value={bio}
-            onChange={(e) => {
-              setBio(e.target.value);
-            }}
-            required
-          ></input>
+        <input
+        className="sign-up-input"
+        name="toys"
+        type="text"
+        placeholder="Bio"
+        value={bio}
+    onChange={(e) => {
+        setBio(e.target.value);
+    }}
+    required
+        ></input>
+        <label className="sign-up-label" htmlFor="age">
+        How old is your woofer?
         </label>
-        <label>
-          How old is your woofer?
-          <input
-            className="sign_up"
-            type="number"
-            placeholder="How old is your dog?"
-            value={age}
-            onChange={(e) => {
-              setAge(e.target.valueAsNumber);
-            }}
-            required
-          ></input>
-        </label>
+        <input
+        className="sign-up-input"
+        name="age"
+        type="number"
+        placeholder="How old is your dog?"
+        value={age}
+    onChange={(e) => {
+        setAge(e.target.valueAsNumber);
+    }}
+    required
+        ></input>
         <button className="signUp-button" onClick={submitUser}>
-          Sign Up
+        Sign Up
         </button>
-      </form>
-    </div>
-  );
+        </form>
+        </div>
+        );
 }
