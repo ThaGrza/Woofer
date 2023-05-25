@@ -6,6 +6,7 @@ require('dotenv').config();
 
 router.get('/getParks/:location', async (req,res) => {
   try{
+      console.log("You did it");
     let location = req.params.location;
     let apiKey = process.env.REACT_APP_API_KEY;
     let apiUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog+parks+in+${location}&key=${apiKey}`

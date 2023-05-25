@@ -1,40 +1,42 @@
-import React, { useState } from "react";
-import ParksDisplay from "../parksDisplay/ParksDisplay";
+import { ChangeEvent, useState } from "react";
 import "./SearchParks.css";
 
-function SearchParks(props: any) {
-  const [searchActive, setSearchActive] = useState(false);
+interface Location {
+  onSearchChange: (value: string) => void;
+}
 
-// moved to homepage.tsx
-  const handleChange = (e: any) => {
-      //! Map response data to parksDisplay comp
+const SearchParks = ({ onSearchChange }: Location) => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    onSearchChange(searchValue);
   };
 
   return (
     <div className="search-parks-container">
-      <div className="search-container">
+      <div role="search" className="search-container">
         <input
           placeholder="Search by zip-code or city..."
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              handleChange(e);
-              setSearchActive(true);
-            }
-          }}
           title="Enter Your Town / City"
           className="search-input"
+          type="text"
+          onChange={handleChange}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSubmit();
+            }
+          }}
         ></input>
-        <button className="search-parks-button" onClick={handleChange}>
+        <button className="search-button" onClick={handleSubmit}>
           Search
         </button>
       </div>
-      {searchActive ? (
-        <div className="parks-container">{<ParksDisplay />}</div>
-      ) : (
-        <div></div>
-      )}
     </div>
   );
-}
+};
 
 export default SearchParks;
