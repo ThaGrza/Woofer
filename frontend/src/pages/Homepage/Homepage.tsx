@@ -6,8 +6,14 @@ import Footer from "../../components/footer/Footer";
 import ParksDisplay from "../../components/parksDisplay/ParksDisplay";
 import ParksApi from "../../components/parksApi/ParksApi";
 
+interface Park{
+  name: string;
+  formatted_address: string;
+  rating: number;
+}
 const Homepage = () => {
   const [location, setLocation] = useState("");
+  const [parks, setParks] = useState<Park[]>([]);
 
   const handleSearch = (value: string) => {
     setLocation(value);
@@ -16,7 +22,7 @@ const Homepage = () => {
 
   const getData = () => {
       ParksApi(location).then(function (res){
-          console.log(res);
+          setParks(res);
       })
   };
 
@@ -24,7 +30,13 @@ const Homepage = () => {
     <div className="homepage-container">
       <Navbar />
       <SearchParks onSearchChange={handleSearch} />
-      <ParksDisplay name={location} />
+      {parks.map((park: Park) => (
+      <ParksDisplay
+      name={park.name}
+      address={park.formatted_address}
+      rating={park.rating}
+      />
+      ))}
       <Footer />
     </div>
   );

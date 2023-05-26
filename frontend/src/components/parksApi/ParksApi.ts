@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-interface Parks{
-}
 
 const ParksApi = async (location: string) => {
     try{
         const response = await axios.get(`/getParks/:${location}`);            
-        return response;
+        const parks = response.data.results;
+        return parks;
     }catch(err){
         console.log(err)
     }
