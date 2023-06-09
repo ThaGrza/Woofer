@@ -18,4 +18,18 @@ router.get('/getParks/:location', async (req,res) => {
   }
 });
 
+// router.get('/getParkImages/:reference', async (req,res) => {
+//   try{
+//     let reference = req.params.reference;
+//     let apiKey = process.env.REACT_APP_API_KEY;
+//     let apiUrl = `https://maps.googleapis.com/maps/api/place/photo?parameters${reference}&key=${apiKey}`
+//     const response = await axios.get(apiUrl);
+//     const photo = response.data;
+//     return res.status(200).json(photo);
+//   } catch(err){
+//     console.log(err);
+//     res.status(500).json({Error: 'Something Blew UP =('})
+//   }
+// });
+
 module.exports = router;

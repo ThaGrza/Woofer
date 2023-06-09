@@ -5,12 +5,13 @@ import SearchParks from "../../components/searchParks/SearchParks";
 import Footer from "../../components/footer/Footer";
 import ParksDisplay from "../../components/parksDisplay/ParksDisplay";
 import ParksApi from "../../components/parksApi/ParksApi";
-
-interface Park{
+interface Park {
   name: string;
   formatted_address: string;
   rating: number;
 }
+
+// ! Extract photo reference and pass it to ParksDisplay
 const Homepage = () => {
   const [location, setLocation] = useState("");
   const [parks, setParks] = useState<Park[]>([]);
@@ -21,23 +22,27 @@ const Homepage = () => {
   };
 
   const getData = () => {
-      ParksApi(location).then(function (res){
-          setParks(res);
-      })
+    ParksApi(location).then(function (res) {
+      setParks(res);
+      console.log(parks);
+    });
   };
 
   return (
     <div className="homepage-container">
       <Navbar />
       <SearchParks onSearchChange={handleSearch} />
-      {parks.map((park: Park) => (
-      <ParksDisplay
-      name={park.name}
-      address={park.formatted_address}
-      rating={park.rating}
-      />
-      ))}
-      <Footer />
+      <div className="parks-display-container">
+        {/* Add unique key props for children */}
+        {/* {parks.map((park: Park) => (
+          <ParksDisplay
+            name={park.name}
+            address={park.formatted_address}
+            rating={park.rating}
+          />
+        ))} */}
+      </div>
+      {/* <Footer /> */}
     </div>
   );
 };

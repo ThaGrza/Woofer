@@ -1,17 +1,15 @@
-.parks-container{
-}
-.park{
-    display: flex;
+.park {
+  border: 1px solid white;
 }
 
-.park-name{
-    font-size: 1.2rem;
+.park-name {
+  font-size: 1.2rem;
 }
 
-.park-address{
-    font-size: 1rem;
+.park-address {
+  font-size: 1rem;
 }
 
-.park-rating{
-    font-weight: bold;
+.park-rating {
+  font-weight: bold;
 }
