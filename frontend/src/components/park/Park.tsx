@@ -6,7 +6,7 @@ interface Park {
   location: number;
   miles: number;
 }
-
+// ! I think this isn't even being used.
 export default function ParkCard(props: Park) {
   return (
     <div className="park-container">

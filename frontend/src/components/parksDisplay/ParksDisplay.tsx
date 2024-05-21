@@ -7,7 +7,7 @@ interface Props {
   name: string;
   address: string;
   rating: number;
-  image: string;
+  // image: string;
 }
 
 const ParksDisplay = ({ name, address, rating }: Props) => {

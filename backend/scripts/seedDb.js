@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models/User");
+const User = require("../models/User");
 
 
 mongoose.connect(
@@ -7,7 +7,7 @@ mongoose.connect(
   "mongodb://localhost/woofer"
 );
 
-const userSeed = [
+const fakeUsers = [
   {
     name: "Andrew Griswold",
     dog: "Harlow",
@@ -38,9 +38,23 @@ const userSeed = [
   },
   {
     name: "Emily Alquiza",
+    bio: "Friendly ball of fun.",
     dog: "Max",
-    bio:
-      "Friendly ball of fun.",
     age: 3
   }
 ];
+
+const seedData = async() => {
+  try {
+    await User.deleteMany({});
+
+    for(let i = 0; i < fakeUsers.length; i++){
+      User.collection.insertMany(fakeUsers[i])
+    }
+  console.log(`Seeds Have Been Planted`)
+  } catch(err){
+    console.error(err)
+  }
+}
+
+seedData();

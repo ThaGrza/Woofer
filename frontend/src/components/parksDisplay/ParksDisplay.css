@@ -1,5 +1,8 @@
 .park {
   border: 1px solid white;
+  margin: 1rem;
+  width: 580px;
+  padding: 1rem;
 }
 
 .park-name {

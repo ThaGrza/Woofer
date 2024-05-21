@@ -4,11 +4,10 @@
 }
 .parks-display-container {
   display: flex;
-  margin: auto;
   justify-content: center;
-  flex-flow: row wrap;
-  position: relative;
-  width: 80%;
-  justify-content: space-between;
-  margin-top: 8em;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  margin-top: 8rem;
 }

@@ -34,13 +34,13 @@ const Homepage = () => {
       <SearchParks onSearchChange={handleSearch} />
       <div className="parks-display-container">
         {/* Add unique key props for children */}
-        {/* {parks.map((park: Park) => (
+        {parks.map((park: Park) => (
           <ParksDisplay
             name={park.name}
             address={park.formatted_address}
             rating={park.rating}
           />
-        ))} */}
+        ))}
       </div>
       {/* <Footer /> */}
     </div>
