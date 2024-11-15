@@ -1,9 +1,10 @@
 .search-user-container {
   display: flex;
   justify-content: center;
+  transition: 0.15s;
+  overflow: hidden;
 }
 
-/*! Fix font (githubs search navbar scaling effect) */
 .search-user-input {
   height: 2rem;
   font-size: 1rem;
@@ -12,23 +13,9 @@
   margin-left: 2rem;
   color: rgb(36, 36, 36);
   text-indent: 10px;
-  transition: 0.15s;
 }
 
-.search-user-button {
-  background-color: rgb(255, 255, 255);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.search-user-button:active {
-  transform: translateY(2px);
-  background-color: rgb(255, 255, 255);
-}
-
-/*! Fix font (githubs search navbar scaling effect) */
-.search-user-input:focus {
+.search-user-container:focus-within {
   transform: scaleX(2);
+  font-size: 2rem;
 }

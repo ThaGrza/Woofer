@@ -25,9 +25,6 @@ function SearchUser() {
           }
         }}
       ></input>
-      {/* <button className="search-user-button" onClick={findUser}>
-        Search
-      </button> */}
     </div>
   );
 }
