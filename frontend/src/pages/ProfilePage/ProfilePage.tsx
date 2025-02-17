@@ -25,9 +25,9 @@ export default function ProfilePage(props: any) {
         <div className="profile-bio-info">
           <h2 className="profile-info dog-name">Harlow</h2>
           <p className="profile-info human-name">
-            Cared for by: Andrew Griswold
+            Cared for by: Andrew & McKayla Griswold
           </p>
-          <p className="profile-info age">Age: 4</p>
+          <p className="profile-info age">Age: 7</p>
           <p className="profile-info toys">Favorite Toys: Stuffed Animals</p>
           <p className="profile-info bio">
             Bio: Harlow is a super friendly dog but takes some time to warm up

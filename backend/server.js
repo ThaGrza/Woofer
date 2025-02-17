@@ -2,12 +2,22 @@ const userRoutes = require('./routes/users');
 const googleParks = require('./routes/googleParks');
 const axios = require('axios');
 const express = require('express');
-const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const pg = require('pg');
 const app = express();
 const port = process.env.PORT || 3001;
 require('dotenv').config();
+const { Client } = pg;
+
+// Postgresql Connection settings 
+const client = new Client({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT
+});
 
 
 // Middleware
@@ -39,13 +49,20 @@ const tests = async() => {
     console.log("error:", err)
   }
 }
-// Mongoose settings
-mongoose.set('strictQuery', true);
 
-// Database Connection
-mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://127.0.0.1/woofer"
-  );
+// ! Delete later
+const testDb = async() => {
+  try{
+  await client.connect()
+  const res = await client.query('SELECT * FROM USERS')
+  await client.end()
+
+  } catch(err){
+    console.error(error.message)
+  }
+
+}
+testDb()
 
 
 app.listen(port, () => {
