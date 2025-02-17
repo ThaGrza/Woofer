@@ -1,12 +1,38 @@
-const mongoose = require("mongoose");
+// ! PERCHANCE DONT NEED SCHEMA BUT MAYBE 
+const { Sequelize, DataTypes } = require('sequelize');
 
-const UserSchema = mongoose.Schema({
-  email: { type: String, required: true, unique: true},
-  password: {type: String, required: true, unique: false},
-  name: { type: String, required: true },
-  dog: { type: String, required: true },
-  bio: String,
-  age: { type: Number, required: true }
-});
+const User = sequelize.define(
+  'User',
+  {
+    firstName: {
+      type: DataTypes.STRING,
+      allowNULL: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNULL: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNULL: false,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNULL: false,
+    },
+    dogName: {
+      type: DataTypes.STRING,
+      allowNULL: false,
+    },
+    bio: {
+      type: DataTypes.STRING,
+      allowNULL: true,
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNULL: true,
+    }
+  }
+);
 
-module.exports = mongoose.model('Users', UserSchema);
+console.log(User);

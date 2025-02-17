@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const User = require('../models/');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require("../auth");
@@ -29,6 +29,7 @@ router.post('/register', async (req, res) => {
         res.json({ message: err });
     }
 });
+
 // * Login User
 router.post('/login', (req,res) => {
     User.findOne({email: req.body.email })
@@ -78,7 +79,7 @@ router.get('/user/:userName', async (req,res) => {
         console.log("omg a request!")
     }catch(err){
         res.json({ message: err });
-        console.log("NOT AUTHORIZED");
+        console.log("NOT AUTHORIZED", err);
     }
 });
 
