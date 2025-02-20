@@ -28,11 +28,10 @@ export default function ProfilePage(props: any) {
             <h4 className="profile-info name">Andrew & Mckayla</h4>
           </div>
           <div className="profile-info">
-            Age:
-            <p className="profile-info age">6</p>
+            <p className="profile-info age">Age: 6</p>
           </div>
           <div className="profile-info">
-            <p className="profile-info location">Bedford</p>
+            <p className="profile-info location"> @ Austin, TX</p>
           </div>
           <div className="profile-info">
             <p className="profile-info toys"> Small Tennis balls, stuffies</p>
@@ -40,7 +39,7 @@ export default function ProfilePage(props: any) {
           <div className="profile-info">
             <p className="profile-info bio">
               Harlow Harletus mcquate griswold is the cutest woofer in the
-              world. She also has admin privilages on Woofer. =)
+              world. She also has admin privilages on Woofer.
             </p>
             <br />
           </div>

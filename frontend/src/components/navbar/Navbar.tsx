@@ -6,8 +6,8 @@ function Navbar() {
   let loggedIn = true;
   return (
     <div className="nav-container">
-      <Link to="/" className="title nav-link">
-        <h1 className="">Woofer</h1>
+      <Link to="/homepage" className="nav-link title">
+        Woofer
       </Link>
       <SearchUser />
       {loggedIn ? (

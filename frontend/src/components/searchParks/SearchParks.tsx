@@ -10,6 +10,7 @@ const SearchParks = ({ onSearchChange }: Location) => {
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
+    console.log(event.target.value);
   };
 
   const handleSubmit = () => {

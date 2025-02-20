@@ -1,23 +1,28 @@
 .profile-page-container {
   margin: auto;
-}
-.profile-container {
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  margin-left: 8rem;
+  overflow-y: scroll;
 }
 
-.profile-bio-info {
-  margin-bottom: 5rem;
+.profile-container {
+  /* margin-top: 3rem;
+  margin-left: 8rem; */
+  display: flex;
+  /* flex-direction: column; */
 }
 
 .profile-picture {
   height: auto;
   width: 200px;
   border-radius: 50%;
-  padding: 1em;
-  object-fit: fit;
+  padding: 4rem;
+}
+
+.profile-info-container {
+  margin-top: 6rem;
+}
+
+.profile-bio-info {
+  margin-bottom: 5rem;
 }
 
 .profile-dog-name {
@@ -58,6 +63,7 @@
   border-style: solid;
   width: 80%;
   margin: auto;
+  /* display: flex; */
   /* text-align: center; */
 }
 
